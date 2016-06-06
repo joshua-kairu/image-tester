@@ -159,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                         fitStartRadioButton,
                         fitXYRadioButton,
                         fitXYRadioButton,
+                        matrixRadioButton,
                         noneRadioButton
                 };
 
@@ -182,6 +183,45 @@ public class MainActivity extends AppCompatActivity {
         return null;
 
     } // end method getSelectedRadioButton
+
+    // begin method uncheckOtherRadioButtons
+    // deselects all other radios except the one passed in
+    private void uncheckOtherRadioButtons( RadioButton checkedRadioButton ) {
+
+        // 0. create an array of all radio buttons
+        // 1. go through that array
+        // 1a. uncheck all radios not the checked radio
+
+        // 0. create an array of all radio buttons
+
+        RadioButton[] radioButtons =
+                {
+                        centerRadioButton,
+                        centerCropRadioButton,
+                        centerInsideRadioButton,
+                        fitCenterRadioButton,
+                        fitEndRadioButton,
+                        fitStartRadioButton,
+                        fitXYRadioButton,
+                        fitXYRadioButton,
+                        matrixRadioButton,
+                        noneRadioButton
+                };
+
+        // 1. go through that array
+
+        // begin enhanced for through the array
+        for( RadioButton radioButton : radioButtons ) {
+
+            // 1a. uncheck all radios not the checked radio
+
+            // 1a. uncheck all radios not the checked radio
+
+            if ( radioButton.equals(  checkedRadioButton ) == false ) { radioButton.setChecked( false ); }
+
+        } // end enhanced for through the array
+
+    } // end method deselectOtherRadioButtons
 
     // begin method onClickRadioButton
     @OnClick(
@@ -207,23 +247,41 @@ public class MainActivity extends AppCompatActivity {
         // 3. if the no radio has been selected
         // 3a. make the image have a 32 dp padding
         // 3b. fit image to center
+        // 3c. check the selected radio
+        // 3d. uncheck other radios
         // 4. if the center radio is selected
         // 4a. scale the image to center
+        // 4b. check the selected radio
+        // 4c. uncheck other radios
         // 5. if the center crop radio is selected
         // 5a. scale the image to center crop
+        // 5b. check the selected radio
+        // 5c. uncheck other radios
         // 6. if the center inside radio is selected
         // 6a. scale the image to center inside
+        // 6b. check the selected radio
+        // 6c. uncheck other radios
         // 7. if the fit center radio is selected
         // 7a. scale the image to fit center
+        // 7b. check the selected radio
+        // 7c. uncheck other radios
         // 8. if the fit end radio is selected
         // 8a. scale the image to fit end
+        // 8b. check the selected radio
+        // 8c. uncheck other radios
         // 9. if the fit start radio is selected
         // 9a. scale the image to fit start
+        // 9b. check the selected radio
+        // 9c. uncheck other radios
         // 10. if the fit XY radio is selected
         // 10a. scale the image to fit XY
+        // 10b. check the selected radio
+        // 10c. uncheck other radios
         // 11. if the matrix radio is selected
         // 11a. scale the image to matrix
         // 11b. scale the image using the matrix
+        // 11c. check the selected radio
+        // 11d. uncheck other radios
 
         // 0. get the currently checked radio
 
@@ -260,7 +318,13 @@ public class MainActivity extends AppCompatActivity {
 
                 photoImageView.setScaleType( ImageView.ScaleType.FIT_CENTER );
 
+                // 3c. check the selected radio
+
                 checkedRadioButton.setChecked( true );
+
+                // 3d. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
 
                 break;
 
@@ -273,6 +337,14 @@ public class MainActivity extends AppCompatActivity {
 
                 photoImageView.setScaleType( ImageView.ScaleType.CENTER );
 
+                // 4b. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 4c. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
+
                 break;
 
             // 5. if the center crop radio is selected
@@ -283,6 +355,14 @@ public class MainActivity extends AppCompatActivity {
                 // 5a. scale the image to center crop
 
                 photoImageView.setScaleType( ImageView.ScaleType.CENTER_CROP );
+
+                // 5b. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 5c. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
 
                 break;
 
@@ -295,6 +375,14 @@ public class MainActivity extends AppCompatActivity {
 
                 photoImageView.setScaleType( ImageView.ScaleType.CENTER_INSIDE );
 
+                // 6b. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 6c. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
+
                 break;
 
             // 7. if the fit center radio is selected
@@ -305,6 +393,14 @@ public class MainActivity extends AppCompatActivity {
                 // 7a. scale the image to fit center
 
                 photoImageView.setScaleType( ImageView.ScaleType.FIT_CENTER );
+
+                // 7b. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 7c. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
 
                 break;
 
@@ -317,6 +413,14 @@ public class MainActivity extends AppCompatActivity {
 
                 photoImageView.setScaleType( ImageView.ScaleType.FIT_END );
 
+                // 8b. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 8c. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
+
                 break;
 
             // 9. if the fit start radio is selected
@@ -328,6 +432,14 @@ public class MainActivity extends AppCompatActivity {
 
                 photoImageView.setScaleType( ImageView.ScaleType.FIT_START );
 
+                // 9b. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 9c. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
+
                 break;
 
             // 10. if the fit XY radio is selected
@@ -338,6 +450,14 @@ public class MainActivity extends AppCompatActivity {
                 // 10a. scale the image to fit XY
 
                 photoImageView.setScaleType( ImageView.ScaleType.FIT_XY );
+
+                // 10b. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 10c. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
 
                 break;
 
@@ -353,6 +473,14 @@ public class MainActivity extends AppCompatActivity {
                 // 11b. scale the image using the matrix
 
                 photoImageView.setImageMatrix( imageTranslationMatrix );
+
+                // 11c. check the selected radio
+
+                checkedRadioButton.setChecked( true );
+
+                // 11d. uncheck other radios
+
+                uncheckOtherRadioButtons( checkedRadioButton );
 
                 break;
 
