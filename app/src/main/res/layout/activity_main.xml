@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+ Image Tester
+
+ Tutorial for showcasing proper use of images in Material Design
+
+ Copyright (C) 2016 Kairu Joshua Wambugu
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see http://www.gnu.org/licenses/.
+
+ -->
+
+<FrameLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:paddingLeft="@dimen/layout_padding"
+
+    android:paddingRight="@dimen/layout_padding"
+
+    android:paddingTop="@dimen/layout_padding"
+
+    android:paddingBottom="@dimen/layout_padding"
+
+    android:id="@+id/am_fl_scrollview"
+
+    tools:context=".MainActivity"
+
+    >
+
+    <!-- ScrollView for containing the contents of the app -->
+
+    <ScrollView
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        >
+
+        <!-- LinearLayout to contain the contents of the app -->
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            >
+
+            <android.support.v7.widget.CardView
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:id="@+id/am_cv"
+
+                >
+
+                <!-- LinearLayout to hold the picture -->
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical"
+
+                    >
+
+                    <!-- ImageView to show the picture -->
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+
+                        android:layout_height="300dp"
+
+                        android:id="@+id/am_iv"
+
+                        android:src="@drawable/photo2"
+
+                        />
+
+                    <!-- LinearLayout to hold the details of the picture -->
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+
+                        android:orientation="vertical"
+
+                        android:padding="@dimen/layout_padding"
+
+                        >
+
+                        <!-- TextView to hold the information of the picture's source -->
+
+                        <TextView
+
+                            android:id="@+id/am_tv_info_text"
+
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+
+                            android:text="From Unsplash"
+
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+
+                            />
+
+                        <!-- TextView to hold the information of the picture's photographer -->
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+
+                            android:text="Photographer: Julia Caesar"
+
+                            android:id="@+id/am_tv_photographer_text"
+
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- GridLayout to hold the items to select to manipulate the picture -->
+
+            <GridLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="@dimen/layout_margin_top"
+
+                android:paddingRight="@dimen/layout_padding"
+
+                >
+
+                <!-- RadioButton for NO!!! -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="NO!!!"
+
+                    android:id="@+id/am_rb_none"
+
+                    android:layout_column="0"
+
+                    android:layout_row="0"
+
+                    />
+
+                <!-- RadioButton for CENTER -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="CENTER"
+
+                    android:id="@+id/am_rb_center"
+
+                    android:layout_column="0"
+
+                    android:layout_row="2"
+
+                    />
+
+                <!-- RadioButton for CENTER_CROP -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="CENTER_CROP"
+
+                    android:id="@+id/am_rb_center_crop"
+
+                    android:layout_column="0"
+
+                    android:layout_row="3"
+
+                    />
+
+                <!-- RadioButton for CENTER_INSIDE -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="CENTER_INSIDE"
+
+                    android:id="@+id/am_rb_center_inside"
+
+                    android:layout_column="0"
+
+                    android:layout_row="4"
+
+                    />
+
+                <!-- Some space -->
+
+                <!--
+
+                Space between the first column of buttons and the second one
+                50 dps allows the view to look neatly spaced while
+                not leaving the spacing decisions to the system
+
+                The space is vertical, covering 4 rows down
+
+                -->
+
+                <Space
+
+                    android:layout_row="0"
+
+                    android:layout_column="1"
+
+                    android:layout_width="50dp"
+
+                    android:layout_rowSpan="4"
+
+                    />
+
+                <!-- RadioButton for FIT_CENTER -->
+
+                <!--
+                 android:checked
+                 Indicates the initial checked state of this button.
+                 -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="FIT_CENTER"
+
+                    android:id="@+id/am_rb_fit_center"
+
+                    android:layout_column="2"
+
+                    android:layout_row="0"
+
+                    android:checked="false"
+
+                    />
+
+                <!-- RadioButton for FIT_END -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="FIT_END"
+
+                    android:id="@+id/am_rb_fit_end"
+
+                    android:layout_column="2"
+
+                    android:layout_row="1"
+
+                    />
+
+                <!-- RadioButton for FIT_START -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="FIT_START"
+
+                    android:id="@+id/am_rb_fit_start"
+
+                    android:layout_column="2"
+
+                    android:layout_row="2"
+
+                    />
+
+                <!-- RadioButton for FIT_XY -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="FIT_XY"
+
+                    android:id="@+id/am_rb_fit_XY"
+
+                    android:layout_column="2"
+
+                    android:layout_row="3"
+
+                    />
+
+                <!-- RadioButton for MATRIX -->
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="MATRIX"
+
+                    android:id="@+id/am_rb_matrix"
+
+                    android:layout_column="2"
+
+                    android:layout_row="4"
+
+                    />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
