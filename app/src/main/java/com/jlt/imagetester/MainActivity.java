@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 0. super things
         // 1. use the activity main layout
-        // 2. bind views
+        // 2. inject views
         // 3. start with the fit center button checked
         // 4. initialize the matrix
         // 4a. it should scale an image by 50% and
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView( R.layout.activity_main );
 
-        // 2. bind views
+        // 2. inject views
 
         ButterKnife.inject( this );
 
