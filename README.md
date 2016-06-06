@@ -22,7 +22,7 @@ This repo tries its best to follow the [Semantic Versioning](http://semver.org/)
 
 A video? Yes. :smile:
 
-![](screen-records/image-tester-2016-06-06-145814.mp4) 
+![](screen-records/image-tester-2016-06-06-145814.gif) 
 
 ## Abilities :muscle:
 
