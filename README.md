@@ -8,7 +8,7 @@ This repo contains the implementation of a [Udacity](https://www.udacity.com/) s
 
 ## Version History :package:
 
-**latest** 	[XML Test v1.0.0](https://github.com/joshua-kairu/xml-test/releases/download/v1.0/XML-Test-v1.0.0.apk) 	Monday, June 6, 2016
+**latest** 	[Image Tester v1.0.0](https://github.com/joshua-kairu/image-tester/releases/download/v1.0.0/image-tester-v1.0.0.apk) 	Monday, June 6, 2016
 
 This repo tries its best to follow the [Semantic Versioning](http://semver.org/) guidelines.
 
